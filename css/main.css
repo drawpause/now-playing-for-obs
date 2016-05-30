@@ -60,10 +60,14 @@ textarea {
 .np {
     background-repeat: no-repeat;
     background-size: auto 100%;
-    padding-left: 70px;
-    height: 50px;
-    line-height: 52px;
+    padding-left: 130px;
+    height: 100px;
+    line-height: 100px;
     display: block;
+    color: white;
+    text-shadow: -2px -2px 3px #000, 2px -2px 3px #000, -2px 2px 3px #000, 2px 2px 3px #000;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .np.noimage {
