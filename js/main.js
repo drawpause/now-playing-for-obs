@@ -25,9 +25,6 @@ function refresh() {
         },
         url: 'http://ws.audioscrobbler.com/2.0/',
         success: function (results) {
-            // What to do when the ajax is successful.
-            // "results" is the response from the url (eg. "theAction" here)
-
             var song = results.recenttracks.track[0].name;
             var artist = results.recenttracks.track[0].artist['#text'];
             var art = results.recenttracks.track[0].image[2]['#text'];
@@ -35,7 +32,7 @@ function refresh() {
             var element = $('.np');
             console.log(playing);
             if (playing == 'true') {
-                element.text('Now playing: ' + song + ' by ' + artist);
+                element.html('Now playing:<br> ' + song + ' by ' + artist);
                 if(!art) {
                     element.addClass('noimage');
                 } else {
@@ -46,7 +43,6 @@ function refresh() {
             }
         },
         error: function (results) {
-            // What to do when the ajax fails.
             console.log("ERROR");
             $(".np").text('');
         }
@@ -57,5 +53,3 @@ $(document).ready(function () {
     refresh();
     window.setInterval(refresh, 2000);
 });
-
-// 8665d0f4c6278e0cbdf852067b529085
